@@ -1,0 +1,128 @@
+/* style.css
+   Styl dla pliku T03-notatka
+   Autorka: AI — możesz prosić o zmiany (kolory, czcionki, układ)
+*/
+
+:root{
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --accent: #2b6cb0; /* niebieski */
+    --muted: #6b7280;
+    --text: #0f172a;
+    --accent-2: #10b981; /* zielony akcent */
+    --max-width: 900px;
+    --radius: 12px;
+}
+
+*{box-sizing: border-box}
+
+html,body{
+    height:100%;
+    margin:0;
+    padding:0;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: linear-gradient(180deg, var(--bg), #eef2f7 60%);
+    color: var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* Layout główny */
+header{
+    background: transparent;
+    padding: 2.25rem 1rem 1rem 1rem;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+    font-size:2.25rem;
+    letter-spacing: -0.5px;
+    color: var(--accent);
+}
+
+header h2{
+    margin: .25rem 0 0 0;
+    font-weight:500;
+    color: var(--muted);
+}
+
+header hr{
+    margin:1.25rem auto 0 auto;
+    width: 60%;
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent);
+}
+
+section{
+    max-width: var(--max-width);
+    margin: 2rem auto;
+    background: var(--card);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 30px rgba(15,23,42,0.06);
+    line-height:1.6;
+}
+
+section h2{
+    font-size:1.1rem;
+    margin: 1rem 0 0.5rem 0;
+    color: #0b5e8a;
+}
+
+/* Listy */
+ul{
+    margin: .25rem 0 1rem 1.25rem;
+    padding:0;
+}
+
+li{
+    margin: .45rem 0;
+    padding-left:.4rem;
+}
+
+/* nowoczesne markery listy */
+li::marker{
+    color: var(--accent-2);
+    font-weight:700;
+}
+
+/* dodatkowe odstępy między sekcjami */
+section > br{display:none;} /* usuwa widoczność <br> (opcjonalnie) */
+
+hr{
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,0,0,0.06), transparent);
+    margin: 1.5rem 0;
+}
+
+/* Responsywność */
+@media (max-width:700px){
+    section{
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+    header h1{ font-size:1.6rem }
+    header h2{ font-size:1rem }
+}
+
+/* Druk */
+@media print{
+    body{ background: #fff }
+    section{ box-shadow:none; border-radius:0; }
+    header hr{ display:none }
+}
+
+/* Dodatkowe drobne poprawki typograficzne */
+strong{ font-weight:600 }
+code{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace; background: #f3f4f6; padding: 0.08rem 0.28rem; border-radius:4px }
+
+/* Ułatwienia dostępności: kontrast przy linkach */
+a{ color:var(--accent); text-decoration: none }
+a:focus, a:hover{ text-decoration: underline }
+
+/* Przyjemne marginesy na dole dokumentu */
+body::after{ content:''; display:block; height:3rem }
