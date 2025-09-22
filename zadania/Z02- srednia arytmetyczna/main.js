@@ -12,7 +12,7 @@ const wynik = document.querySelector('#wynik');
         let d = parseFloat(liczba_d.value);
 
         let suma = a+b+c+d;
-        let srednia = (a+b+c+d)/4;
+        let srednia = suma/4;
 
         wynik.innerHTML = `
         a = ${a} <br>
