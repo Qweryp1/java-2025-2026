@@ -1,0 +1,119 @@
+/* --- STYLE.CSS --- */
+/* paleta zimnych odcieni */
+:root {
+    --bg: #e8f1f8;         /* jasne tło – błękit */
+    --card: #ffffff;       /* tło sekcji */
+    --accent: #2a6f97;     /* niebieski akcent */
+    --accent-light: #468faf; /* jaśniejszy akcent */
+    --muted: #6c7a86;      /* szarawy tekst pomocniczy */
+    --text: #0d1b2a;       /* główny ciemny granat */
+    --hr: rgba(13, 27, 42, 0.15);
+    --radius: 14px;
+    --max-width: 1000px;
+    --shadow: 0 8px 20px rgba(13, 27, 42, 0.08);
+}
+
+/* reset */
+* { box-sizing: border-box; margin:0; padding:0; }
+html, body {
+    height:100%;
+    background: linear-gradient(180deg, var(--bg), #fdfdfd 70%);
+    font-family: "Segoe UI", Roboto, sans-serif;
+    color: var(--text);
+    line-height:1.6;
+}
+
+/* kontenery */
+body > header,
+body > section {
+    max-width: var(--max-width);
+    margin: 30px auto;
+    padding: 24px;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* nagłówek */
+header h1 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+header h2 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--muted);
+}
+header hr {
+    margin-top: 14px;
+    border: none;
+    height: 2px;
+    background: var(--accent-light);
+    border-radius: 4px;
+}
+
+/* treść sekcji */
+section h2 {
+    margin: 20px 0 10px;
+    font-size: 1.3rem;
+    color: var(--accent);
+    border-left: 4px solid var(--accent-light);
+    padding-left: 10px;
+}
+section h3 {
+    margin: 10px 0 18px;
+    font-size: 1rem;
+    color: var(--text);
+    font-weight: 400;
+    text-align: justify;
+}
+
+/* linie poziome */
+section hr {
+    border: none;
+    height: 1px;
+    background: var(--hr);
+    margin: 22px 0;
+}
+
+/* obrazki */
+section img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 18px auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(13, 27, 42, 0.15);
+    border: 2px solid var(--accent-light);
+}
+
+/* responsywność */
+@media (max-width: 700px) {
+    body > header, body > section {
+        margin: 18px auto;
+        padding: 16px;
+    }
+    header h1 { font-size: 1.5rem; }
+    section h2 { font-size: 1.15rem; }
+    section h3 { font-size: 0.95rem; }
+}
+
+/* tryb ciemny */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0d1b2a;
+        --card: #1b263b;
+        --accent: #61a5c2;
+        --accent-light: #89c2d9;
+        --muted: #a5b9c8;
+        --text: #e0e6ed;
+        --hr: rgba(255,255,255,0.12);
+        --shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+    body {
+        background: linear-gradient(180deg, #0d1b2a, #1b263b 80%);
+        color: var(--text);
+    }
+    section h3 { color: var(--muted); }
+}
