@@ -19,6 +19,7 @@ const wynik = document.querySelector('#wynik');
             b = ${b} <br>
             c = ${c} <br>
             d = ${d} <br>
+            
 srednia bez zaokrąglenia = ${srednia} <br>
 średnia zaokrąglona = ${srednia.toFixed(3)} <br>
             `
